@@ -17,7 +17,7 @@ The only API Manager with forward control - allowing management of external APIs
 
 * Built in Node.js runtime for creating new APIs or mashing existing ones
 
-* Integration with TekMonks AI Analytics platform for GUI dashboards for API Metrics
+* Integration with [TekMonks](https://tekmonks.com) AI Analytics platform for GUI dashboards for API Metrics
 
 * Built in Developer Portal for exposing APIs in an API Registry
 
