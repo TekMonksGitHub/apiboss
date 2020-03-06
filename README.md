@@ -21,4 +21,4 @@ The only API Manager with forward control - allowing management of external APIs
 
 * Built in Developer Portal for exposing APIs in an API Registry
 
-* Forward API Manager - for managing external third party APIs, Keys and Tokens which are called the Enterprise. 
+* Forward API Manager - for managing external third party APIs, Keys and Tokens which are called by the Enterprise. 
