@@ -1,4 +1,4 @@
 {
     "/apps/apiboss/echo" : "/apis/echo.js?needsToken=false&key=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
-    "/apps/apiboss/getfiles" : "/apis/restproxy.js?get=true&needsToken=false&key=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf&url=http%3A%2F%2Flocalhost%3A9090%2Fapps%2Fwsadmin%2Fgetfiles&method=GET&headers=%7B%22X-API-Key%22%3A%22fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389%22%7D"
+    "/apps/apiboss/getfiles" : "/apis/restproxy.js?get=false&needsToken=false&key=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf&url=http%3A%2F%2Flocalhost%3A9090%2Fapps%2Fwsadmin%2Fgetfiles&method=GET&headers=%7B%22x-api-key%22%3A%22fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389%22%2C%22x-apiboss-passthru-headers%22%3A%5B%22authorization%22%2C%22accept%22%5D%7D"
 }

@@ -6,7 +6,7 @@
 
 exports.doService = async jsonReq => {
 	let resp = jsonReq.data;
-	resp.headers = jsonReq.headers;
+	resp.headers = jsonReq.servObject.req.headers;
 
 	return {data: resp, headers: {"Server": "APIBoss"}};
 }
