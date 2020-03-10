@@ -1,0 +1,10 @@
+{
+    "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf": {
+        "callsPerSecond": 10, 
+        "callsPerMinute": 100,
+        "callsPerHour": 1000, 
+        "callsPerDay": 5000, 
+        "callsPerMonth": 50000, 
+        "callsPerYear":500000
+    }
+}
