@@ -27,7 +27,7 @@ function initSync(_apiregistry) {
     setInterval(_apiCountCleaner, 100);   // run our cleaner at 100ms intervals
 }
 
-function checkSecurity(apiregentry, url, req, headers, servObject) {
+function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
     if (!apikeychecker.checkSecurity(apiregentry, url, req, headers, servObject)) return false; // bad key
 
     const {decisecondsBucket, secondsBucket, minutesBucket, hoursBucket, dayBucket, monthBucket} = _getCurrentTimeBuckets();
@@ -48,12 +48,18 @@ function checkSecurity(apiregentry, url, req, headers, servObject) {
 
     DISTRIBUTED_MEMORY.set(API_CALLCOUNTS_DISTM_KEY, apiCallMap);   // update the call counts cluster wide
 
-    if (rateLimits.callsPerSecond) if (_sumArray(buckets.decisecondsBucket) > rateLimits.callsPerSecond) return false;
-    if (rateLimits.callsPerMinute) if (_sumArray(buckets.secondsBucket) > rateLimits.callsPerMinute) return false;
-    if (rateLimits.callsPerHour) if (_sumArray(buckets.minutesBucket) > rateLimits.callsPerHour) return false;
-    if (rateLimits.callsPerDay) if (_sumArray(buckets.hoursBucket) > rateLimits.callsPerDay) return false;
-    if (rateLimits.callsPerMonth) if (_sumArray(buckets.dayBucket) > rateLimits.callsPerMonth) return false;
-    if (rateLimits.callsPerYear) if (_sumArray(buckets.monthBucket) > rateLimits.callsPerYear) return false;
+    if (rateLimits.callsPerSecond) if (_sumArray(buckets.decisecondsBucket) > rateLimits.callsPerSecond) 
+        {reason.reason = `Rate limit: Calls per second exceeded for key: ${key}`; reason.code = 429; return false;}
+    if (rateLimits.callsPerMinute) if (_sumArray(buckets.secondsBucket) > rateLimits.callsPerMinute)
+        {reason.reason = `Rate limit: Calls per minute exceeded for key: ${key}`; reason.code = 429; return false;}
+    if (rateLimits.callsPerHour) if (_sumArray(buckets.minutesBucket) > rateLimits.callsPerHour) 
+        {reason.reason = `Rate limit: Calls per hour exceeded for key: ${key}`; reason.code = 429; return false;}
+    if (rateLimits.callsPerDay) if (_sumArray(buckets.hoursBucket) > rateLimits.callsPerDay) 
+        {reason.reason = `Rate limit: Calls per day exceeded for key: ${key}`; reason.code = 429; return false;}
+    if (rateLimits.callsPerMonth) if (_sumArray(buckets.dayBucket) > rateLimits.callsPerMonth) 
+        {reason.reason = `Rate limit: Calls per month exceeded for key: ${key}`; reason.code = 429; return false;}
+    if (rateLimits.callsPerYear) if (_sumArray(buckets.monthBucket) > rateLimits.callsPerYear) 
+        {reason.reason = `Rate limit: Calls per year exceeded for key: ${key}`; reason.code = 429; return false;}
 
     return true;
 }
