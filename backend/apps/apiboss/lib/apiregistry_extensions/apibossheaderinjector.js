@@ -4,10 +4,12 @@
  * 
  * Injects custom headers from APIBoss
  */
+const jwttokenmanager = require(`${CONSTANTS.LIBDIR}/apiregistry_extensions/jwttokenmanager.js`);
 
-function injectResponseHeaders(_apiregentry, _url, response, _requestHeaders, responseHeaders) {
-    const headersToAdd = response.headers;
+function injectResponseHeaders(apiregentry, url, response, requestHeaders, responseHeaders) {
+    const headersToAdd = response?.headers;
     if (headersToAdd) for (const headerName of Object.keys(headersToAdd)) responseHeaders[headerName] = headersToAdd[headerName];
+    if (response.data.result) jwttokenmanager.injectResponseHeadersInternal(apiregentry, url, response, requestHeaders, responseHeaders);
 }
 
 module.exports = {injectResponseHeaders};

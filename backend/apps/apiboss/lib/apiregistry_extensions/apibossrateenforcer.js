@@ -20,9 +20,10 @@ const apikeychecker = require(`${CONSTANTS.LIBDIR}/apiregistry_extensions/apikey
 let lastSecond, lastMinute, lastHour, lastDay, lastMonth;
 
 function initSync(_apiregistry) {
-    const conf = DISTRIBUTED_MEMORY.get(RATELIMIT_DISTM_KEY) || require(`${APPCONSTANTS.CONF_DIR}/ratelimits.json`);
+    const APPCONSTANTS = require(`${__dirname}/../constants.js`);
+    const conf = CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY) || require(`${APPCONSTANTS.CONF_DIR}/ratelimits.json`);
 	LOG.info(`Read Policy, Rate Limits: ${JSON.stringify(conf)}`);
-    if (!DISTRIBUTED_MEMORY.get(RATELIMIT_DISTM_KEY)) DISTRIBUTED_MEMORY.set(RATELIMIT_DISTM_KEY, conf);
+    if (!CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY)) CLUSTER_MEMORY.set(RATELIMIT_DISTM_KEY, conf);
 
     setInterval(_apiCountCleaner, 100);   // run our cleaner at 100ms intervals
 }
@@ -36,7 +37,7 @@ function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
 
     const key = apikeychecker.getIncomingAPIKey(headers);
 
-    const rateLimits = DISTRIBUTED_MEMORY.get(RATELIMIT_DISTM_KEY)[key]; 
+    const rateLimits = CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY)[key]; 
     if (!rateLimits) return true; // no SLA for this API Key
 
     const apiCallMap = _getAPICallMap(); if (!apiCallMap[key]) apiCallMap[key] = {...CALL_MAP_TEMPLATE};
@@ -46,7 +47,7 @@ function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
     buckets.minutesBucket[minutesBucket] ++; buckets.hoursBucket[hoursBucket] ++;
     buckets.dayBucket[dayBucket] ++; buckets.monthBucket[monthBucket] ++;
 
-    DISTRIBUTED_MEMORY.set(API_CALLCOUNTS_DISTM_KEY, apiCallMap);   // update the call counts cluster wide
+    CLUSTER_MEMORY.set(API_CALLCOUNTS_DISTM_KEY, apiCallMap);   // update the call counts cluster wide
 
     if (rateLimits.callsPerSecond) if (_sumArray(buckets.decisecondsBucket) > rateLimits.callsPerSecond) 
         {reason.reason = `Rate limit: Calls per second exceeded for key: ${key}`; reason.code = 429; return false;}
@@ -65,8 +66,8 @@ function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
 }
 
 function _getAPICallMap() {
-    const apiCallMap = DISTRIBUTED_MEMORY.get(API_CALLCOUNTS_DISTM_KEY);
-    if (!apiCallMap) DISTRIBUTED_MEMORY.set(API_CALLCOUNTS_DISTM_KEY, {});
+    const apiCallMap = CLUSTER_MEMORY.get(API_CALLCOUNTS_DISTM_KEY);
+    if (!apiCallMap) CLUSTER_MEMORY.set(API_CALLCOUNTS_DISTM_KEY, {});
     return apiCallMap || {};
 }
 
