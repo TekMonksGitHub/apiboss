@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/TekMonksGitHub/raw/master/APIBOSS_logo.png">
+</p>
+
 API Boss
 ============
 API Manager and Developer Portal for JSON REST APIs and SOAP Web Services.
