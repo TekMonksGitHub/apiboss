@@ -9,3 +9,4 @@ APP_ROOT = `${path.resolve(`${__dirname}/../`)}`;
 
 exports.APP_ROOT = APP_ROOT;
 exports.CONF_DIR = `${APP_ROOT}/conf`;
+exports.APP_NAME = "apiboss";

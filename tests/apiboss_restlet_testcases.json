@@ -1,0 +1,639 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "description": "Testing APIs for APIBoss",
+        "id": "14182647-adb3-4b42-bdfb-a20988ab9bf3",
+        "name": "APIBoss"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"add\",\n  \"id\":\"admin2\",\n  \"pw\":\"DLT4TekMonks\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/addAdmin"
+            },
+            "id": "37db7f20-0a2a-46f7-9a9a-d12af1cee2f8",
+            "name": "Add Admin",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzNzcyMjc3OTI0LCJqdGkiOiI2OWQ2ODMxOWE2NDBlN2QwMTRjNmFmNTFmZjFjZDhmMCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fb3e47fba4d380b2e45006d13a9bda03cc65c00ed253c224e75508bda0f0c2b9"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"changepw\",\n  \"id\":\"admin\",\n  \"oldpw\":\"DLT4TekMonks\",\n  \"newpw\":\"DLT4TekMonks2\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/changeAdminPw"
+            },
+            "id": "72ac6131-42f2-4818-986b-4367788c939a",
+            "name": "Change Admin Password",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODIzNjE5NjU2LCJqdGkiOiI4OGNhYWQ2ODhjMzJjOGExZTUwOWU0OTNlMWU5NDgzMiIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.68647c0f7ed438599a7275b68aa61127b040b5cad4ddc8e90acb6612443a2a50"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"path\":\"/apps/apiboss/echoSecureProxied2\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/delete"
+            },
+            "id": "2d11f3b1-850f-4c52-b33f-2fa93f36de21",
+            "name": "Delete API",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI2MzI0Njc4LCJqdGkiOiI1NDg4ODdjYTIxODYyYmIxMmRhNzQ1YTFiNTQ2Y2RkMSIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.1e1314601bcb808d069e917f7438c6935068fb84ec309f7aa4a27a659ed3e159"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"delete\",\n  \"id\":\"admin2\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/deleteAdmin"
+            },
+            "id": "a5b1c1e1-464b-44a7-ae16-2560934f06ba",
+            "name": "Delete Admin",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzNzcyMjc3OTI0LCJqdGkiOiI2OWQ2ODMxOWE2NDBlN2QwMTRjNmFmNTFmZjFjZDhmMCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fb3e47fba4d380b2e45006d13a9bda03cc65c00ed253c224e75508bda0f0c2b9"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/echo"
+            },
+            "id": "26c1d5c6-9b1e-45b2-b24d-d93eb9b8117d",
+            "name": "Echo",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/echoSecure"
+            },
+            "id": "e61e1ee1-e357-45c1-b234-2bc270e2807e",
+            "name": "Echo Secure",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzNjQ2MzQ1MjUyLCJqdGkiOiI3YjU4NGM4ZDEzMTE2NDYyMzczODE3YWQwYTY0MWFkZiIsInN1YiI6ImFjY2VzcyJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ad429b5efee8391a044896ffcd17f7591230f2fec40dec4c2bc87078c6044b8c"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/genjwttoken"
+            },
+            "id": "e2a40ffe-5989-4abd-925d-a89fb867ced7",
+            "name": "Get JWT Token",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/list"
+            },
+            "id": "0af5f83f-52c7-4de7-8572-626aca14e78c",
+            "name": "List APIs",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer \teyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI0NDgwNzQ4LCJqdGkiOiI4NWZmZWFkMzgwNTQwZjQ5ZGVkZmUwZmQzYzcxZDBhZiIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.731cdd13287e79112cc50cfce22d4d9287c06d6dd981b2f07b19995c5516e4b0"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"login\",\n  \"id\":\"admin\",\n  \"pw\":\"DLT4TekMonks\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/login"
+            },
+            "id": "56c0f1ef-76cc-4e25-9b46-ed68c73962be",
+            "name": "Login Admin",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "test",
+                    "value": "request"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/echoSecureProxied"
+            },
+            "id": "bd42e32d-f3c0-46f8-97ac-12d04fd00855",
+            "name": "Proxied Echo Secure",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzNjQ3NTc0MTAzLCJqdGkiOiI4NWViNTgwYzZjNjQ4MzNhMjgwYmQ0NTAwZTU1N2M1YSIsInN1YiI6ImFjY2VzcyJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.694e6deb17afee50375e770cb401615de3b341e3cb8102a26211441b397f0b81"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "test",
+                    "value": "request"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/echoSecureProxied2"
+            },
+            "id": "50991f50-a271-4251-a7b0-8686d2d19fe5",
+            "name": "Proxied Echo Secure 2",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI2MzI0Njc4LCJqdGkiOiI1NDg4ODdjYTIxODYyYmIxMmRhNzQ1YTFiNTQ2Y2RkMSIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.1e1314601bcb808d069e917f7438c6935068fb84ec309f7aa4a27a659ed3e159"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"test\":\"request\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "data",
+                    "value": "ec8a2d0644393bcf91e816cd6e058816917ecfa53d5da7758df8"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/echoSecureProxiedEncrypted"
+            },
+            "id": "97ef4cea-66c0-4fee-a0e3-700b6c7c987c",
+            "name": "Proxied Echo Secure Encrypted",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzNjgzMTc5MTMxLCJqdGkiOiI5N2M2N2JiMTg1ZWQxYjg2NDAwYTAyNDQyZjM2ZDRjNCIsInN1YiI6ImFjY2VzcyJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.62dde2ef80dae91bf8fdc7561d07d06acbf86c087a2241184e8e2437ebbf8aaf"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"path\":\"/apps/apiboss/echoSecureProxied2\",\n  \"apiregentry\":\"/apis/restproxy.js?get=true&needsToken=access,admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf&url=http%3A%2F%2Flocalhost%3A9090%2Fapps%2Fapiboss%2FechoSecure&method=POST&headers=%7B%22x-api-key%22%3A%22jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf%22%2C%22x-apiboss-passthru-headers%22%3A%5B%22authorization%22%2C%22accept%22%5D%7D\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/publish"
+            },
+            "id": "e348d218-f0cb-4754-b6c7-f689f32016c0",
+            "name": "Publish API",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI0OTE0MzM2LCJqdGkiOiJlMzBmYTE2Mzc2YmRkZDZjZGEyNThlZTU1ZjAzOTc5NCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ba1d12a1c8f6676df5636d5d84d56e74530ea727540648ef35169425a68407a4"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

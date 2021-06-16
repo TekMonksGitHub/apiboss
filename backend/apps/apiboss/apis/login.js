@@ -17,6 +17,7 @@ exports.doService = async req => {
     if (jsonReq.op.toLowerCase() == "add") return {data: {result: await _addAdmin(jsonReq.id, jsonReq.pw, loginReg)}}
     else if (jsonReq.op.toLowerCase() == "delete") return {data: {result: await _deleteAdmin(jsonReq.id, loginReg)}}
     else if (jsonReq.op.toLowerCase() == "login") return {data: {result: _loginAdmin(jsonReq.id, jsonReq.pw, loginReg)}}
+    else if (jsonReq.op.toLowerCase() == "changepw") return {data: {result: await _changeAdminPw(jsonReq.id, jsonReq.oldpw, jsonReq.newpw, loginReg)}}
     else {LOG.error(`Unkown admin ID operation in request: ${jsonReq?JSON.stringify(jsonReq):"null"}.`); return {data:CONSTANTS.FALSE_RESULT}};
 }
 
@@ -36,6 +37,15 @@ async function _deleteAdmin(id, loginReg) {
     return true;
 }
 
+async function _changeAdminPw(id, oldpw, newpw, loginReg) {
+    if (!_loginAdmin(id, oldpw, loginReg)) {LOG.error(`Admin ID ${id}, bad old password for change request.`); return false;}
+    loginReg[id] = cryptMod.encrypt(newpw);
+    await fspromises.writeFile(`${APPCONSTANTS.CONF_DIR}/admin.json`, JSON.stringify(loginReg, null, 4));
+    CLUSTER_MEMORY.set(LOGIN_REG_DISTM_KEY, loginReg);
+    return true;
+}
+
 const validateRequest = jsonReq => jsonReq && jsonReq.id && ( 
     ((jsonReq.op.toLowerCase() == "add" || jsonReq.op.toLowerCase() == "login") && jsonReq.pw) || 
-    jsonReq.op.toLowerCase() == "delete" );
+    jsonReq.op.toLowerCase() == "delete" ||
+    (jsonReq.op.toLowerCase() == "changepw" && jsonReq.oldpw && jsonReq.newpw));
