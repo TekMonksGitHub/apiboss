@@ -1,10 +1,14 @@
 {
     "/apps/apiboss/admin/publish": "/apis/publish.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
+    "/apps/apiboss/admin/edit": "/apis/edit.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/admin/list": "/apis/list.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/admin/delete": "/apis/delete.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/admin/login": "/apis/login.js?needsToken=false&addsToken=sub:admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/admin/deleteAdmin": "/apis/login.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/admin/addAdmin": "/apis/login.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
+    "/apps/apiboss/admin/blacklistip": "/apis/blacklistip.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
+    "/apps/apiboss/admin/whitelistip": "/apis/whitelistip.js?needsToken=admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
+    
     "/apps/apiboss/echo": "/apis/echo.js?needsToken=false",
     "/apps/apiboss/genjwttoken": "/apis/genjwttoken.js?needsToken=false&addsToken=sub:access&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",
     "/apps/apiboss/echoSecure": "/apis/echo.js?needsToken=access,admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf",

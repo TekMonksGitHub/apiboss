@@ -74,6 +74,56 @@
                 "items": []
               },
               "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"add\",\n  \"ip\":\"127.0.0.2\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/blacklistip"
+            },
+            "id": "a5a8a410-487a-4b3f-bff9-bb888b92c96d",
+            "name": "Blacklist IP",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI0MDg0ODAyMTQ5LCJqdGkiOiIyZmQxY2VjN2U5MTI2YTBhNTQ0OTFhOTkxYjM5MWMyNyIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.aac11e267075854532666345d2a9509c119f691a8c92e2a626f51c746d5780cd"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
               "textBody": "{\n  \"op\":\"changepw\",\n  \"id\":\"admin\",\n  \"oldpw\":\"DLT4TekMonks\",\n  \"newpw\":\"DLT4TekMonks2\"\n}"
             },
             "uri": {
@@ -629,6 +679,56 @@
                 "enabled": true,
                 "name": "Authorization",
                 "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI0OTE0MzM2LCJqdGkiOiJlMzBmYTE2Mzc2YmRkZDZjZGEyNThlZTU1ZjAzOTc5NCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ba1d12a1c8f6676df5636d5d84d56e74530ea727540648ef35169425a68407a4"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"op\":\"remove\",\n  \"ip\":\"0000:0000:0000:0000:0000:0000:0000:0001\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/admin/whitelistip"
+            },
+            "id": "1acd27ec-2009-459b-99c9-db2775952254",
+            "name": "Whitelist IP",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI0MDgzNzQ4MDA3LCJqdGkiOiIzOWJiYTEzMTlmNzU2ODgwNmUzNGMwNGQ5NGM3ZTIzZCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.0324a711c44918f39b107d2b817ca48ba83eb77619c720911ce3533dbf2dcf5d"
               }
             ]
           }
