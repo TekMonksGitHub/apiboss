@@ -1,0 +1,6 @@
+[
+    "BEGIN TRANSACTION",
+    "CREATE TABLE requests(id varchar not null primary key, timestamp number not null, url varchar not null, headers varchar not null, request varchar not null)",
+    "CREATE TABLE responses(id varchar not null primary key, timestamp number not null, error varchar not null, status number not null, responseheaders varchar not null, response varchar not null, FOREIGN KEY(id) REFERENCES requests(id))",
+    "COMMIT TRANSACTION"
+]
