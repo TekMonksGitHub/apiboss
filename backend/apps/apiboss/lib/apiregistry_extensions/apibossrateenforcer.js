@@ -5,6 +5,8 @@
  * Enforces rate policies. This one also indirectly ensures API has
  * the right key, as we enforce SLA policies based on keys.
  */
+const APPCONSTANTS = require(`${__dirname}/../constants.js`);
+
 const RATELIMIT_DISTM_KEY = "__org_monkshu_apiboss_ratelimits";
 const API_CALLCOUNTS_DISTM_KEY = "__org_monkshu_apiboss_callcounts";
 const CALL_MAP_TEMPLATE = {buckets:{
@@ -15,12 +17,10 @@ const CALL_MAP_TEMPLATE = {buckets:{
     dayBucket: _createIntArray(31),
     monthBucket: _createIntArray(12)
 }};
-const apikeychecker = require(`${CONSTANTS.LIBDIR}/apiregistry_extensions/apikeychecker.js`);
 
 let lastSecond, lastMinute, lastHour, lastDay, lastMonth;
 
 function initSync(_apiregistry) {
-    const APPCONSTANTS = require(`${__dirname}/../constants.js`);
     const conf = CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY) || require(`${APPCONSTANTS.CONF_DIR}/ratelimits.json`);
 	LOG.info(`Read Policy, Rate Limits: ${JSON.stringify(conf)}`);
     if (!CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY)) CLUSTER_MEMORY.set(RATELIMIT_DISTM_KEY, conf);
@@ -29,6 +29,7 @@ function initSync(_apiregistry) {
 }
 
 function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
+    const apikeychecker = APIREGISTRY.getExtension("apikeychecker");
     if (!apikeychecker.checkSecurity(apiregentry, url, req, headers, servObject)) return false; // bad key
 
     const {decisecondsBucket, secondsBucket, minutesBucket, hoursBucket, dayBucket, monthBucket} = _getCurrentTimeBuckets();

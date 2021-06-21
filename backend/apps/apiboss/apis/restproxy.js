@@ -18,10 +18,10 @@ async function doService(req) {
     if (method == "delete") method = "deleteHttp";        // delete is a reserved word in JS
 
     const timestamp = Date.now(), id = `${timestamp}${parseInt(crypto.randomBytes(4).toString("hex"),16)}`;
-    apibosslog.recordRequest(id, timestamp, method, host, port, path, headers, reqObj); // log request, async, don't wait
+    apibosslog.recordRequest(id, timestamp, method, host, port, path, headers, reqObj, "rest"); // log request, async, don't wait
     const {error,data,status,resHeaders} = await rest[method](host, port, path, headers, reqObj);
-    apibosslog.recordResponse(id, Date.now(), error, data, status, resHeaders); // log response, async, don't wait
+    apibosslog.recordResponse(id, Date.now(), error, data, status, resHeaders, "rest"); // log response, async, don't wait
 
-    if (error) throw("APIBoss Proxy Error", {status, message:error}); 
+    if (error) throw("APIBoss REST Proxy Error", {status, message:error}); 
     else return({data,headers: resHeaders});
 }

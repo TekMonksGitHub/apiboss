@@ -648,6 +648,56 @@
                 "items": []
               },
               "bodyType": "Text",
+              "textBody": "<?xml version=\"1.0\"?>\n<soap:Envelope \n\txmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n<soap:Header/>\n<soap:Body>\n<ns2:responseWrapper xmlns:ns2=\"http://common.sample.com\" xmlns=\"http://response.sample.com\">\n<ID>12345678910</ID>\n</ns2:responseWrapper>\n</soap:Body>\n</soap:Envelope>"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/wsechoSecureProxied"
+            },
+            "id": "3c388862-0532-4d02-b1c1-3c7d94d6b75c",
+            "name": "Proxied WSEcho Basic Auth",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Basic YWRtaW46dGVzdGluZw=="
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
               "textBody": "{\n  \"path\":\"/apps/apiboss/echoSecureProxied2\",\n  \"apiregentry\":\"/apis/restproxy.js?get=true&needsToken=access,admin&keys=jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf&url=http%3A%2F%2Flocalhost%3A9090%2Fapps%2Fapiboss%2FechoSecure&method=POST&headers=%7B%22x-api-key%22%3A%22jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf%22%2C%22x-apiboss-passthru-headers%22%3A%5B%22authorization%22%2C%22accept%22%5D%7D\"\n}"
             },
             "uri": {
@@ -679,6 +729,51 @@
                 "enabled": true,
                 "name": "Authorization",
                 "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjIzODI0OTE0MzM2LCJqdGkiOiJlMzBmYTE2Mzc2YmRkZDZjZGEyNThlZTU1ZjAzOTc5NCIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ba1d12a1c8f6676df5636d5d84d56e74530ea727540648ef35169425a68407a4"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "<?xml version=\"1.0\"?>\n<soap:Envelope \n\txmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n<soap:Header/>\n<soap:Body>\n<ns2:responseWrapper xmlns:ns2=\"http://common.sample.com\" xmlns=\"http://response.sample.com\">\n<ID>12345678910</ID>\n</ns2:responseWrapper>\n</soap:Body>\n</soap:Envelope>"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/apiboss/wsecho"
+            },
+            "id": "63d92724-81ce-4271-a9ce-0b57c7ef741e",
+            "name": "WSEcho",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "jfiouf90iejw9ri32fewji910idj2fkvjdskljkeqjf"
               }
             ]
           }
