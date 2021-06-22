@@ -9,8 +9,10 @@
         "Access-Control-Expose-Headers": "*",
         "Access-Control-Max-Age": 86400
     },
-    "pfxPath": "<path to PFX (.key) File>",
-    "pfxPassphrase": "<passphrase for the pfx file>",
-    "host" : "0.0.0.0",
-    "port" : 7837
+    "sslKeyFile":"/etc/letsencrypt/live/[your domain]/privkey.pem",
+    "sslCertFile":"/etc/letsencrypt/live/[your domain]/fullchain.pem",
+    "host" : "::",
+    "port" : 7837,
+    "ipblacklistRefresh": 5000,
+    "ipwhitelistRefresh": 5000
 }
