@@ -10,7 +10,7 @@
  exports.doService = doService;
  
  async function doService(req) {
-     const method = req.method.toLowerCase(); const url = new URL(req.url); const host = url.hostname; 
+     let method = req.method.toLowerCase(); const url = new URL(req.url); const host = url.hostname; 
      const port = url.port; const path = url.pathname+url.search; if (!path.startsWith("/")) path = `/${path}`;
      const headers = {...req.headers}; const reqData = req.data;
  
