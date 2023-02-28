@@ -41,7 +41,7 @@ function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
     const rateLimits = CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY)[key]; 
     if (!rateLimits) return true; // no SLA for this API Key
 
-    const apiCallMap = _getAPICallMap(); if (!apiCallMap[key]) apiCallMap[key] = {...CALL_MAP_TEMPLATE};
+    const apiCallMap = _getAPICallMap(); if (!apiCallMap[key]) apiCallMap[key] = JSON.parse(JSON.stringify(CALL_MAP_TEMPLATE));
     const buckets = apiCallMap[key].buckets;
 
     buckets.decisecondsBucket[decisecondsBucket] ++; buckets.secondsBucket[secondsBucket] ++;
