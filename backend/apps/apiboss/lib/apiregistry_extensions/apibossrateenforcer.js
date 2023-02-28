@@ -6,6 +6,8 @@
  * the right key, as we enforce SLA policies based on keys.
  */
 const APPCONSTANTS = require(`${__dirname}/../constants.js`);
+const utils = require(`${CONSTANTS.LIBDIR}/utils.js`);
+
 
 const RATELIMIT_DISTM_KEY = "__org_monkshu_apiboss_ratelimits";
 const API_CALLCOUNTS_DISTM_KEY = "__org_monkshu_apiboss_callcounts";
@@ -41,7 +43,7 @@ function checkSecurity(apiregentry, url, req, headers, servObject, reason) {
     const rateLimits = CLUSTER_MEMORY.get(RATELIMIT_DISTM_KEY)[key]; 
     if (!rateLimits) return true; // no SLA for this API Key
 
-    const apiCallMap = _getAPICallMap(); if (!apiCallMap[key]) apiCallMap[key] = {...CALL_MAP_TEMPLATE};
+    const apiCallMap = _getAPICallMap(); if (!apiCallMap[key]) apiCallMap[key] = utils.clone(CALL_MAP_TEMPLATE);
     const buckets = apiCallMap[key].buckets;
 
     buckets.decisecondsBucket[decisecondsBucket] ++; buckets.secondsBucket[secondsBucket] ++;
