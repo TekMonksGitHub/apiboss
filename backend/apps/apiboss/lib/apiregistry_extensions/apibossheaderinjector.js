@@ -8,7 +8,7 @@
 function injectResponseHeaders(apiregentry, url, response, requestHeaders, responseHeaders) {
     const headersToAdd = response?.headers;
     if (headersToAdd) for (const headerName of Object.keys(headersToAdd)) responseHeaders[headerName] = headersToAdd[headerName];
-    if (response.data.result) APIREGISTRY.getExtension("jwttokenmanager").injectResponseHeadersInternal(apiregentry, url, response, requestHeaders, responseHeaders);
+    if (response.data.result) APIREGISTRY.getExtension("jwttokenmanager").injectResponseHeaders(apiregentry, url, response, requestHeaders, responseHeaders);
 }
 
 module.exports = {injectResponseHeaders};
