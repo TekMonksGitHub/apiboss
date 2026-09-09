@@ -1,0 +1,28 @@
+{
+    "comment": "Defaults for the publish flow. A publish request only has to carry path, backendurl and method; every other value it leaves blank is assigned from here.",
+
+    "allowedMethods": ["GET", "POST"],
+
+    "defaults": {
+        "plugin": "/plugins/aiwall.js",
+        "rules": "[]",
+        "rateLimit": {
+            "callsPerSecond": 10,
+            "callsPerMinute": 100,
+            "callsPerHour": 1000,
+            "callsPerDay": 5000,
+            "callsPerMonth": 10000,
+            "callsPerYear": 50000
+        }
+    },
+
+    "aiwallHeaders": {
+        "aiwall": "true"
+    },
+
+    "clusterMemoryKeys": {
+        "rateLimits": "__org_monkshu_apiboss_ratelimits",
+        "httpBasicAuths": "__org_monkshu_apiboss_httpauths",
+        "aiwallRules": "__org_monkshu_apiboss_aiwallrules"
+    }
+}
